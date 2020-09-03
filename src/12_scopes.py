@@ -3,7 +3,7 @@
 
 # When you use a variable in a function, it's local in scope to the function.
 x = 12
-
+ 
 def change_x():
     x = 99
 

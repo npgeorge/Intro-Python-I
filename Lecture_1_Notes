@@ -1,0 +1,123 @@
+# Nick George
+# Lambda CS
+# Intro to Python 1
+# simple print statement
+print('Hello!')
+
+# for loop to 1000
+for i in range(1000):
+    print(i)
+
+# for loop with step
+for i in range(0, 10, 2):
+    print(i)
+
+# num to strings
+s = 'hello, '
+t = 'world! My favorite number is '
+u = 3490
+print(s + t + str(u))
+
+# string to int
+a = 12
+b = "30"
+
+print(a + int(b))
+
+#
+# LISTS
+#
+
+a = [44, 20, 129, 0]
+
+for num in a:
+    print(num)
+
+print('------')
+
+# you can pass anything that is iterable into a for loop
+# and it will iterate over that thing
+
+# another method
+for i in range(len(a)):
+    print(a[i])
+
+print('-----printing indexes-----')
+for i in range(len(a)):
+    print(str(i) + ": " + str(a[i]))
+    print(f"{i}: {a[i]}")
+
+# enumerate examples
+print('-----enumerate-----')
+print('-- this is a tuple --')
+print('--- this is immutable ---')
+for num in enumerate(a):
+    print(num)
+
+print('-- example 2 ---')
+for t in enumerate(a):
+    i = t[0]
+    v = t[1]
+    print(f"{i}: {v}")
+
+# cleanest way to write this
+print('-- example 3 --')
+for i, v in enumerate(a):
+    print(f"{i}: {v}")
+
+print('-- insert, append --')
+a = [44, 20, 129, 0]
+
+a.insert(0, 999)
+a.append(9999)
+a[1] = 40
+
+for num in a:
+    print(num)
+
+#
+# DICTIONARIES
+#
+print('---DICTIONARIES!---')
+
+d = {
+    'Goats': 12
+}
+
+d['Nick'] = 33
+
+print(d['Nick'])
+print(d['Goats'])
+
+for i in d:
+    print(f"{i}: {d[i]}")
+
+for k, v in d.items():
+    print(f"{k}: {v}")
+
+#
+# LIST COMPREHENSIONS
+#
+print('-- List Comprehensions --')
+# normal list
+a = [0,1,2,3,4,5,6,7,8,9]
+
+# output      input
+b = [x      for x in a]
+print(b)
+c = [x*2    for x in a]
+print(c)
+
+# we can also put a filter on this
+# output      input        filter
+d = [x      for x in a    if x <= 5]
+print(d)
+
+# if we didnt have list comprehensions
+# we'd end up with something like this
+
+b = []
+
+for x in a:
+    if x<= 5:
+        b.append(x * 2)

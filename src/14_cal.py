@@ -17,7 +17,7 @@ and does the following:
  - Otherwise, print a usage statement to the terminal indicating
    the format that your program expects arguments to be given.
    Then exit the program.
-
+ 
 Note: the user should provide argument input (in the initial call to run the file) and not 
 prompted input. Also, the brackets around year are to denote that the argument is
 optional, as this is a common convention in documentation.

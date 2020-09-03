@@ -8,22 +8,31 @@ y = [8, 9, 10]
 
 # Change x so that it is [1, 2, 3, 4]
 # YOUR CODE HERE
-print(x)
+x.append(4)
+print('Using append: ', x)
 
 # Using y, change x so that it is [1, 2, 3, 4, 8, 9, 10]
 # YOUR CODE HERE
+x = x + y
 print(x)
 
 # Change x so that it is [1, 2, 3, 4, 9, 10]
 # YOUR CODE HERE
-print(x)
+x.remove(8)
+print('Using remove: ', x)
 
 # Change x so that it is [1, 2, 3, 4, 9, 99, 10]
 # YOUR CODE HERE
-print(x)
+x.insert(5, 99)
+print('Using insert: ', x)
 
 # Print the length of list x
 # YOUR CODE HERE
+print('Length: ', len(x))
 
 # Print all the values in x multiplied by 1000
 # YOUR CODE HERE
+print('---Multiply!---')
+for num in x:
+    multiply = num*1000
+    print(multiply)
