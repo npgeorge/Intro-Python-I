@@ -30,3 +30,48 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+from datetime import date
+
+def get_calendar():
+  print('Number of arguments:', len(sys.argv), 'arguments.')
+  print('Argument List:', str(sys.argv))
+
+  # this grabs the arguments passed in after "python3" in the cmd line
+  date_args = sys.argv
+
+  # --Current Day--
+  # use datetime to get current day
+  today = date.today()
+  # turn into string to slice it
+  today = str(today)
+  # slice and make integers to pass into formatmonth
+  current_year = int(today[:4])
+  current_month = int(today[5:7])
+
+  # setting the calendar to begin on Sunday
+  c = calendar.TextCalendar(calendar.SUNDAY)
+
+  # if/else statement
+  if len(date_args) == 1:
+    user_cal = c.formatmonth(current_year,current_month)
+    print(user_cal)
+  elif len(date_args) == 2:
+    # assume they passed in a month
+    # this will grab the first argument passed in
+    # translate from string to integer
+    month_arg = int(date_args[1])
+    # this places the first argument passed as a month
+    user_cal = c.formatmonth(current_year, month_arg)
+    print(user_cal)
+  elif len(date_args) == 3:
+    # this grabs the first two arguments, month and year
+    # translates them from strings to integers
+    month_arg = int(date_args[1])
+    year_arg = int(date_args[2])
+    # create calendar
+    user_cal = c.formatmonth(year_arg,month_arg)
+    print(user_cal)
+  else:
+    print("Please follow this syntax: `python3 14_cal.py [month] [year]`")
+
+get_calendar()

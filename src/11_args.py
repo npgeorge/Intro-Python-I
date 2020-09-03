@@ -44,12 +44,11 @@ def f3(*args):
     length = len(args)
     if length == 1:
         for x in args:
-            y = x + 1
-        #return y
-    else length == 2:
-    for x in args:
-        y = (result += x)
-    return y
+            result = x + 1
+    elif length == 2:
+        for x in args:
+            result += x
+    return result
 
 print('--F3 Here--')
 print(f3(1, 2))  # Should print 3
@@ -65,7 +64,13 @@ print(f3(8))     # Should print 9
 # Note: Google "python keyword arguments".
 
 # YOUR CODE HERE
-
+def f4(*args,**kwargs):
+    print('--What are the kwargs??---')
+    print("kwargs: ", kwargs) 
+    # get key value pairs
+    print('---Key, Value Pairs!---')
+    for keys in kwargs:
+        print('key: ', keys, ', value: ', kwargs[keys])  
 
 # Should print
 # key: a, value: 12
@@ -84,4 +89,4 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-f4(d)
+f4(**d)
